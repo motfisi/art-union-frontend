@@ -1,0 +1,64 @@
+import { Box, IconButton, styled } from "@mui/material";
+import Link from "next/link";
+
+export const Container = styled(Box)(({ theme }) => ({
+  width: "100%",
+  height: 115,
+  position: "fixed",
+  zIndex: 10,
+  top: 0,
+  left: 0,
+  padding: "20px 80px",
+
+  backgroundColor: "rgba(0, 0, 0, 0.3)",
+
+  [theme.breakpoints.down("md")]: {
+    padding: "16px 40px",
+    height: 92,
+  },
+
+  [theme.breakpoints.down("sm")]: {
+    padding: "12px 20px",
+    height: 74,
+  },
+}));
+
+export const MaxWidthWrapper = styled(Box)(({ theme }) => ({
+  width: "100%",
+  maxWidth: 1440,
+  margin: "0 auto",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+
+  [theme.breakpoints.down("lg")]: {
+    maxWidth: 1280,
+  },
+}));
+
+export const LogoContainer = styled(Link)(({ theme }) => ({
+  position: "relative",
+  width: 102,
+  height: 75,
+
+  [theme.breakpoints.down("md")]: {
+    width: 81,
+    height: 60,
+  },
+
+  [theme.breakpoints.down("sm")]: {
+    width: 68,
+    height: 50,
+  },
+}));
+
+export const BurgerContainer = styled(IconButton)(({ theme }) => ({
+  position: "relative",
+  width: 50,
+  height: 35,
+
+  [theme.breakpoints.down("sm")]: {
+    width: 34,
+    height: 24,
+  },
+}));
