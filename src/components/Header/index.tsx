@@ -2,7 +2,7 @@
 
 import { FC, useEffect, useState } from "react";
 import Image from "next/image";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Typography } from "@mui/material";
 import { Turn as Hamburger } from "hamburger-react";
 
@@ -22,11 +22,10 @@ const Header: FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     setIsOpen(false);
-  }, [pathname, searchParams?.toString()]);
+  }, [pathname]);
 
   return (
     <>

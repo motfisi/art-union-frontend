@@ -1,3 +1,5 @@
+"use client";
+
 import { useMediaQuery, Theme } from "@mui/material";
 
 export const useDevice = () => {
