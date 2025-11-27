@@ -1,4 +1,4 @@
-import { Box, IconButton, styled } from "@mui/material";
+import { Box, styled } from "@mui/material";
 import Link from "next/link";
 
 export const Container = styled(Box)(({ theme }) => ({
@@ -52,13 +52,6 @@ export const LogoContainer = styled(Link)(({ theme }) => ({
   },
 }));
 
-export const BurgerContainer = styled(IconButton)(({ theme }) => ({
-  position: "relative",
-  width: 50,
-  height: 35,
-
-  [theme.breakpoints.down("sm")]: {
-    width: 34,
-    height: 24,
-  },
-}));
+export const HamburgerWrapper = styled(Box)({
+  zIndex: 14,
+});

@@ -1,6 +1,6 @@
 import { ROUTES } from "@/const";
 
-export const NAV_ITEMS = [
+export const navItems = [
   {
     label: "ГЛАВНАЯ",
     href: ROUTES.HOMEPAGE,
