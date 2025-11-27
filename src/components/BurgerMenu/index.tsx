@@ -13,15 +13,17 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ isOpen }) => {
       <MainContainer isOpen={isOpen}>
         {isOpen &&
           navItems.map((item, index) => (
-            <Link href={item.href}>
+            <Link
+              key={isOpen ? `${index} open` : `${index} closed`}
+              href={item.href}
+            >
               <Text
-                key={isOpen ? `${index} open` : `${index} closed`}
                 text={item.label}
                 ease="elastic.out(1, 0.7)"
                 splitType="chars"
                 duration={1}
                 delay={70}
-                startDelay={(index + 1) * 0.2}
+                startDelay={index * 0.2}
               />
             </Link>
           ))}
