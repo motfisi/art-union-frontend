@@ -12,7 +12,7 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ isOpen }) => {
     <>
       <Layer1 isOpen={isOpen} />
       <Layer2 isOpen={isOpen} />
-      <MainContainer isOpen={isOpen}>
+      <MainContainer id="burger-menu" isOpen={isOpen}>
         {isOpen &&
           navItems.map((item, index) => (
             <Link
@@ -22,7 +22,7 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ isOpen }) => {
               <Text
                 text={item.label}
                 ease="elastic.out(1, 0.7)"
-                splitType="chars"
+                splitType="words"
                 duration={1}
                 delay={70}
                 startDelay={index * 0.2}

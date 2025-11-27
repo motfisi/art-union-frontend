@@ -9,7 +9,7 @@ export const Container = styled(Box)(({ theme }) => ({
   top: 0,
   left: 0,
   padding: "20px 80px",
-
+  backdropFilter: "blur(10px)",
   backgroundColor: "rgba(0, 0, 0, 0.3)",
 
   [theme.breakpoints.down("md")]: {

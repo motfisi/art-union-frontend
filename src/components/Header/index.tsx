@@ -27,6 +27,26 @@ const Header: FC = () => {
     setIsOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleClick = (e: MouseEvent) => {
+      const menu = document.getElementById("burger-menu");
+      const burgerBtn = document.getElementById("hamburger");
+
+      if (!menu || !burgerBtn) return;
+
+      const target = e.target as Node;
+
+      if (!menu.contains(target) && !burgerBtn.contains(target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [isOpen]);
+
   return (
     <>
       <Container>
@@ -43,7 +63,7 @@ const Header: FC = () => {
           <LogoContainer href={ROUTES.HOMEPAGE}>
             <Image src="/images/logo.png" fill alt="logo" />
           </LogoContainer>
-          <HamburgerWrapper>
+          <HamburgerWrapper id="hamburger">
             <Hamburger
               size={35}
               duration={0.35}

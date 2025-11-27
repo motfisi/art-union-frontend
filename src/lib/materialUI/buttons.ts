@@ -14,6 +14,12 @@ const buttonConfig = (theme: Theme) => ({
         border: `1px solid ${theme.palette.secondary.main}`,
         fontFamily: "var(--font-unista)",
         fontWeight: 400,
+        transition: "background-color 0.25s ease, color 0.25s ease",
+
+        "&:hover": {
+          color: theme.palette.background.default,
+          backgroundColor: theme.palette.text.primary,
+        },
       },
 
       sizeLarge: {
