@@ -1,9 +1,10 @@
 "use client";
 
-import { FC } from "react";
-import Line from "@/components/Line";
-import Image from "next/image";
 import { Box, Typography } from "@mui/material";
+import Image from "next/image";
+import { FC } from "react";
+
+import Line from "@/components/Line";
 import { navItems, INSTAGRAM_LINK, VK_LINK } from "@/const";
 import { useDevice } from "@/hooks";
 
@@ -43,7 +44,7 @@ const Footer: FC = () => {
         <Line />
         <ContactsContainer>
           <ContactWrapper>
-            <HrefText href="tel:+79267769296">+7 (926) 776-92-96</HrefText>
+            <HrefText href="tel:+79267769296">+7 (906) 500-92-26</HrefText>
             <HrefText href="tel:+79267769296">+7 (926) 776-92-96</HrefText>
           </ContactWrapper>
 
@@ -75,7 +76,7 @@ const Footer: FC = () => {
             color="text.secondary"
             textAlign={isMobile ? "center" : "left"}
           >
-            123112, г. Москва, Пресненская наб, д. 10 стр. 2, помещ. 5
+            123112, г. Москва, Пресненская наб., д. 10 стр. 2, помещ. 5
           </Typography>
         </ContactsContainer>
       </Box>

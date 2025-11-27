@@ -1,8 +1,11 @@
-import { FC } from "react";
-import Image from "next/image";
-import Line from "@/components/Line";
-import { useDevice } from "@/hooks";
+"use client";
+
 import { Box, Button } from "@mui/material";
+import Image from "next/image";
+import { FC } from "react";
+
+import Line from "@/components/Line";
+import { useDevice, useVisible } from "@/hooks";
 
 import { ProjectExampleProps } from "./types";
 
@@ -19,9 +22,11 @@ const ProjectExample: FC<ProjectExampleProps> = (props) => {
 
   const { isTablet } = useDevice();
 
+  const { ref, visible } = useVisible(0.9);
+
   return (
     <Container>
-      <ImageWrapper>
+      <ImageWrapper ref={ref} className={`${visible ? "visible" : ""}`}>
         <Image src={image} fill alt="product-pic" />
       </ImageWrapper>
       <Wrapper className="wrapper">
@@ -31,16 +36,40 @@ const ProjectExample: FC<ProjectExampleProps> = (props) => {
           gap={isTablet ? 1 : 2}
           alignItems="inherit"
         >
-          <TypeText color="primary.main" className="text">
+          <TypeText
+            data-aos="fade-up"
+            data-aos-duration="500"
+            color="primary.main"
+            className="text"
+          >
             {type}
           </TypeText>
-          <TitleText className="text">{title}</TitleText>
-          <TypeText color="text.secondary" className="text">
+          <TitleText
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-delay="100"
+            className="text"
+          >
+            {title}
+          </TitleText>
+          <TypeText
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-delay="200"
+            color="text.secondary"
+            className="text"
+          >
             {description}
           </TypeText>
         </Box>
-        <Line />
-        <Button size="large" href={buttonPath}>
+        <Line data-aos="fade-up" data-aos-duration="500" data-aos-delay="300" />
+        <Button
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-delay="400"
+          size="large"
+          href={buttonPath}
+        >
           {buttonText}
         </Button>
       </Wrapper>

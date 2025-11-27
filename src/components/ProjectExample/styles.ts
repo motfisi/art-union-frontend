@@ -4,6 +4,7 @@ export const Container = styled(Box)(({ theme }) => ({
   width: "100%",
   display: "flex",
   alignItems: "center",
+  padding: 12,
   gap: 48,
 
   [theme.breakpoints.down("lg")]: {
@@ -36,6 +37,12 @@ export const ImageWrapper = styled(Box)(({ theme }) => ({
   aspectRatio: "1 / 1",
   borderRadius: 32,
   overflow: "hidden",
+  filter: "grayscale(100%)",
+  transition: "filter 0.8s ease",
+
+  "&.visible": {
+    filter: "grayscale(0%)",
+  },
 
   [theme.breakpoints.down("sm")]: {
     width: "100%",

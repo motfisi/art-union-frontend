@@ -45,7 +45,7 @@ const theme = createTheme({
   },
 });
 
-// @ts-ignore
+// @ts-expect-error: the specifics of passing the theme to components
 theme.components = {
   ...buttonConfig(theme),
 };

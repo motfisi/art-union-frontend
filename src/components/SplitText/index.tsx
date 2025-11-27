@@ -1,10 +1,10 @@
 "use client";
 
-import { FC, useRef, useEffect, useState, CSSProperties } from "react";
+import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText as GSAPSplitText } from "gsap/SplitText";
-import { useGSAP } from "@gsap/react";
+import { FC, useRef, useEffect, useState, CSSProperties } from "react";
 
 import { SplitTextProps } from "./types";
 
@@ -70,10 +70,13 @@ const SplitText: FC<SplitTextProps> = ({
       const assignTargets = (self: GSAPSplitText) => {
         if (splitType.includes("chars") && self.chars.length)
           targets = self.chars;
+
         if (!targets.length && splitType.includes("words") && self.words.length)
           targets = self.words;
+
         if (!targets.length && splitType.includes("lines") && self.lines.length)
           targets = self.lines;
+
         if (!targets.length) targets = self.chars || self.words || self.lines;
       };
       const splitInstance = new GSAPSplitText(el, {
@@ -86,6 +89,7 @@ const SplitText: FC<SplitTextProps> = ({
         reduceWhiteSpace: false,
         onSplit: (self: GSAPSplitText) => {
           assignTargets(self);
+
           return gsap.fromTo(
             targets,
             { ...from },
@@ -108,11 +112,12 @@ const SplitText: FC<SplitTextProps> = ({
               },
               willChange: "transform, opacity",
               force3D: true,
-            }
+            },
           );
         },
       });
       el._rbsplitInstance = splitInstance;
+
       return () => {
         ScrollTrigger.getAll().forEach((st) => {
           if (st.trigger === el) st.kill();
@@ -138,7 +143,7 @@ const SplitText: FC<SplitTextProps> = ({
         onLetterAnimationComplete,
       ],
       scope: ref,
-    }
+    },
   );
 
   const renderTag = () => {
@@ -151,6 +156,7 @@ const SplitText: FC<SplitTextProps> = ({
       willChange: "transform, opacity",
     };
     const classes = `split-parent ${className}`;
+
     switch (tag) {
       case "h1":
         return (
@@ -196,6 +202,7 @@ const SplitText: FC<SplitTextProps> = ({
         );
     }
   };
+
   return renderTag();
 };
 

@@ -27,6 +27,7 @@ export default defineConfig([
       "import/no-extraneous-dependencies": "off",
       "react/no-array-index-key": "off",
       "react-hooks/exhaustive-deps": "off",
+      "react-hooks/set-state-in-effect": "off",
 
       "prettier/prettier": "error",
 

@@ -4,13 +4,13 @@ import { useMediaQuery, Theme } from "@mui/material";
 
 export const useDevice = () => {
   const isMobile = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.down("sm")
+    theme.breakpoints.down("sm"),
   );
   const isTablet = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.down("md")
+    theme.breakpoints.down("md"),
   );
   const isSmallDesktop = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.down("lg")
+    theme.breakpoints.down("lg"),
   );
   const isDesktop = useMediaQuery((theme: Theme) => theme.breakpoints.up("lg"));
 

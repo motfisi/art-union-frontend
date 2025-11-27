@@ -1,5 +1,6 @@
 import { Box, styled } from "@mui/material";
 import ImageBase from "next/image";
+
 import ShinyTextBase from "@/components/ShinyText";
 
 export const Container = styled(Box)(({ theme }) => ({

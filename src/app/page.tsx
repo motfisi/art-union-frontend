@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 
-import HomePage from "@/pages/HomePage";
+import HomePage from "@/components/HomePage";
 
 const Home: FC = () => {
   return <HomePage />;

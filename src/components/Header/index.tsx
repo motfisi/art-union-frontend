@@ -1,14 +1,14 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { Typography } from "@mui/material";
 import { Turn as Hamburger } from "hamburger-react";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { FC, useEffect, useState } from "react";
 
-import { useDevice } from "@/hooks";
-import { ROUTES } from "@/const";
 import BurgerMenu from "@/components/BurgerMenu";
+import { ROUTES } from "@/const";
+import { useDevice } from "@/hooks";
 
 import {
   Container,
@@ -44,6 +44,7 @@ const Header: FC = () => {
     };
 
     document.addEventListener("mousedown", handleClick);
+
     return () => document.removeEventListener("mousedown", handleClick);
   }, [isOpen]);
 

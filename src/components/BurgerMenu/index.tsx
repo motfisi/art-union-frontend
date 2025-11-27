@@ -1,6 +1,7 @@
 "use client";
 
 import { FC } from "react";
+
 import { navItems } from "@/const";
 
 import { BurgerMenuProps } from "./types";

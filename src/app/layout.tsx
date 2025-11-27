@@ -1,10 +1,12 @@
 import { PropsWithChildren } from "react";
 
-import ThemeProvider from "@/lib/materialUI";
+import AOSInit from "@/components/AOSInit";
 import Layout from "@/components/Layout";
+import ThemeProvider from "@/lib/materialUI";
+
+import { manrope, involve, unista } from "./fonts";
 
 import type { Metadata } from "next";
-import { manrope, involve, unista } from "./fonts";
 
 export const metadata: Metadata = {
   title: "ART UNION",
@@ -21,6 +23,7 @@ const RootLayout = (props: PropsWithChildren) => {
     >
       <body>
         <ThemeProvider>
+          <AOSInit />
           <Layout>{children}</Layout>
         </ThemeProvider>
       </body>

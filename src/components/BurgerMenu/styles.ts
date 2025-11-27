@@ -1,6 +1,7 @@
 import { Box, styled } from "@mui/material";
-import SplitText from "@/components/SplitText";
 import LinkBase from "next/link";
+
+import SplitText from "@/components/SplitText";
 
 export const Layer1 = styled(Box, {
   shouldForwardProp: (prop) => prop !== "isOpen",
