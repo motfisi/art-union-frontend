@@ -7,7 +7,7 @@ import { FC } from "react";
 import Line from "@/components/Line";
 import { useDevice, useVisible } from "@/hooks";
 
-import { ProjectExampleProps } from "./types";
+import { type ProjectExampleProps } from "./types";
 
 import {
   Container,

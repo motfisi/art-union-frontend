@@ -66,7 +66,7 @@ export const Wrapper = styled(Box)(({ theme }) => ({
 
 export const ShinyText = styled(ShinyTextBase)(({ theme }) => ({
   fontFamily: "var(--font-manrope)",
-  fontWeight: 400,
+  fontWeight: 600,
   fontSize: 40,
   lineHeight: 1.2,
 

@@ -5,6 +5,7 @@ import { FC } from "react";
 
 import Line from "@/components/Line";
 import ProjectExample from "@/components/ProjectExample";
+import { ROUTES } from "@/const";
 
 import { items } from "./const";
 
@@ -16,7 +17,9 @@ const HomePage: FC = () => {
       <HeroContainer>
         <Wrapper>
           <ShinyText text="Создаем дизайн, который вызывает доверие и эмоциональную связь — узнаю и помню." />
-          <Button size="large">Проекты</Button>
+          <Button size="large" href={ROUTES.PROJECTS}>
+            Проекты
+          </Button>
         </Wrapper>
         <Image
           src="/images/hero-img.png"

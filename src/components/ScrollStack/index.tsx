@@ -1,4 +1,4 @@
-import { FC, useLayoutEffect, useRef, useCallback } from "react";
+import React, { useLayoutEffect, useRef, useCallback } from "react";
 
 import type { ReactNode } from "react";
 
@@ -9,7 +9,7 @@ export interface ScrollStackItemProps {
   children: ReactNode;
 }
 
-export const ScrollStackItem: FC<ScrollStackItemProps> = ({
+export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({
   children,
   itemClassName = "",
 }) => (
@@ -32,16 +32,16 @@ interface ScrollStackProps {
   onStackComplete?: () => void;
 }
 
-const ScrollStack: FC<ScrollStackProps> = ({
+const ScrollStack: React.FC<ScrollStackProps> = ({
   children,
   className = "",
-  itemDistance = 100,
+  itemDistance = 0,
   itemScale = 0,
-  itemStackDistance = 0,
-  stackPosition = "10%",
+  itemStackDistance = 100,
+  stackPosition = "20%",
   scaleEndPosition = "0%",
   baseScale = 1,
-  scaleDuration = 0.5,
+  scaleDuration = 0,
   rotationAmount = 0,
   blurAmount = 0,
   useWindowScroll = true,
@@ -143,14 +143,11 @@ const ScrollStack: FC<ScrollStackProps> = ({
       const cardTop = getElementOffset(card);
       const cardRect = card.getBoundingClientRect();
 
-      const stickyTop = stackPositionPx + itemStackDistance * i;
+      const stickyTop = stackPositionPx;
 
       const pinStart = cardTop - stickyTop;
 
-      const isLastCard = i === cardsRef.current.length;
-      const pinEnd = isLastCard
-        ? endElementTop - stackPositionPx
-        : endElementTop - containerHeight;
+      const pinEnd = endElementTop - containerHeight;
 
       const isPinned = scrollTop >= pinStart && scrollTop <= pinEnd;
 
@@ -175,7 +172,7 @@ const ScrollStack: FC<ScrollStackProps> = ({
 
         for (let j = 0; j < cardsRef.current.length; j++) {
           const jCardTop = getElementOffset(cardsRef.current[j]);
-          const jStickyTop = stackPositionPx + itemStackDistance * j;
+          const jStickyTop = stackPositionPx;
           const jPinStart = jCardTop - jStickyTop;
 
           if (scrollTop >= jPinStart && scrollTop <= pinEnd) {
@@ -287,8 +284,7 @@ const ScrollStack: FC<ScrollStackProps> = ({
         card.style.marginBottom = `${itemDistance}px`;
       }
 
-      // Устанавливаем top для sticky позиционирования один раз
-      const stickyTop = stackPositionPx + itemStackDistance * i;
+      const stickyTop = stackPositionPx;
 
       card.style.top = `${stickyTop}px`;
       card.style.willChange = "transform, filter";
@@ -347,9 +343,8 @@ const ScrollStack: FC<ScrollStackProps> = ({
       className={`scroll-stack-scroller ${className}`.trim()}
       ref={scrollerRef}
     >
-      <div>
+      <div className="scroll-stack-inner">
         {children}
-        {/* Spacer so the last pin can release cleanly */}
         <div className="scroll-stack-end" />
       </div>
     </div>

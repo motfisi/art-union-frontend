@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { ShinyTextProps } from "./types";
+import { type ShinyTextProps } from "./types";
 
 import { StyledShinyText } from "./styles";
 

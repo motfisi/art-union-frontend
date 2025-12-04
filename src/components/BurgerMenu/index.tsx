@@ -4,7 +4,7 @@ import { FC } from "react";
 
 import { navItems } from "@/const";
 
-import { BurgerMenuProps } from "./types";
+import { type BurgerMenuProps } from "./types";
 
 import { Layer1, Layer2, MainContainer, Text, Link } from "./styles";
 
