@@ -101,3 +101,34 @@ export const Image = styled(ImageBase)(({ theme }) => ({
     borderRaduis: 20,
   },
 }));
+
+export const Title = styled("span")(({ theme }) => ({
+  zIndex: 2,
+  fontFamily: "var(--font-involve)",
+  fontWeight: 700,
+  fontSize: 28,
+  margin: "0",
+
+  [theme.breakpoints.down("md")]: {
+    fontSize: 20,
+  },
+
+  [theme.breakpoints.down("sm")]: {
+    fontSize: 16,
+  },
+}));
+
+export const SubTitle = styled("span")(({ theme }) => ({
+  zIndex: 2,
+  fontFamily: "var(--font-uninsta)",
+  fontSize: 28,
+  fontWeight: 400,
+
+  [theme.breakpoints.down("md")]: {
+    fontSize: 20,
+  },
+
+  [theme.breakpoints.down("sm")]: {
+    fontSize: 16,
+  },
+}));

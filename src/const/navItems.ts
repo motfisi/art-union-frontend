@@ -10,8 +10,8 @@ export const navItems = [
     href: ROUTES.PROJECTS,
   },
   {
-    label: "О НАС",
-    href: ROUTES.ABOUT_US,
+    label: "УСЛУГИ",
+    href: ROUTES.SERVICES,
   },
   {
     label: "КОНТАКТЫ",

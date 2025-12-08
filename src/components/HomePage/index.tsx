@@ -9,7 +9,15 @@ import { ROUTES } from "@/const";
 
 import { items } from "./const";
 
-import { Container, HeroContainer, Wrapper, ShinyText, Image } from "./styles";
+import {
+  Container,
+  HeroContainer,
+  Wrapper,
+  ShinyText,
+  Image,
+  SubTitle,
+  Title,
+} from "./styles";
 
 const HomePage: FC = () => {
   return (
@@ -30,6 +38,13 @@ const HomePage: FC = () => {
       </HeroContainer>
 
       <Line />
+
+      <SubTitle>
+        <Title>AU_Desing</Title> – это студия дизайна полного цикла. Наша сила –
+        не просто в создании визуально привлекательных проектов, а в глубинном
+        понимании специфики каждой категории товаров:
+      </SubTitle>
+
       {items.map((item, i) => (
         <ProjectExample
           key={i}

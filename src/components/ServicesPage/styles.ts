@@ -5,43 +5,20 @@ export const Container = styled(Box)(() => ({
   width: "100%",
 }));
 
-export const Title = styled("span")(({ theme }) => ({
-  zIndex: 2,
-  fontFamily: "var(--font-involve)",
-  fontWeight: 700,
-  fontSize: 28,
-  margin: "0",
-  color: theme.palette.primary.main,
-
-  [theme.breakpoints.down("md")]: {
-    fontSize: 20,
-  },
-
-  [theme.breakpoints.down("sm")]: {
-    fontSize: 16,
-  },
-}));
-
-export const SubTitle = styled("h1")(({ theme }) => ({
-  zIndex: 2,
-  fontFamily: "var(--font-uninsta)",
-  fontSize: 28,
-  fontWeight: 400,
-
-  [theme.breakpoints.down("md")]: {
-    fontSize: 20,
-  },
-
-  [theme.breakpoints.down("sm")]: {
-    fontSize: 16,
-  },
-}));
-
-export const ServicesContainer = styled(Box)(() => ({
+export const ServicesContainer = styled(Box)(({ theme }) => ({
   width: "100%",
+  paddingTop: 115,
   display: "flex",
   flexDirection: "column",
   gap: 32,
+
+  [theme.breakpoints.down("md")]: {
+    paddingTop: 92,
+  },
+
+  [theme.breakpoints.down("sm")]: {
+    paddingTop: 74,
+  },
 }));
 
 export const ServicesTitle = styled(Typography)(({ theme }) => ({
