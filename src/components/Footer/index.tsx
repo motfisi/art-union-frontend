@@ -44,8 +44,8 @@ const Footer: FC = () => {
         <Line />
         <ContactsContainer>
           <ContactWrapper>
-            <HrefText href="tel:+79267769296">+7 (906) 500-92-26</HrefText>
             <HrefText href="tel:+79267769296">+7 (926) 776-92-96</HrefText>
+            <HrefText href="tel:+79267769296">+7 (906) 500-92-26</HrefText>
           </ContactWrapper>
 
           <ContactWrapper>

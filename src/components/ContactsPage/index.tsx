@@ -117,7 +117,9 @@ const ContactsPage: FC = () => {
             <Box display="flex" flexDirection="column" gap="12px">
               <ContactText>+7 906 500-92-26</ContactText>
               <ContactText>au_desingkost76@mail.ru</ContactText>
-              <ContactText>г.Минск, ул. Железнодорожная, д.31</ContactText>
+              <ContactText>
+                г. Москва, Пресненская наб., д. 10 стр. 2, помещ. 5
+              </ContactText>
             </Box>
           )}
         </Box>
@@ -184,7 +186,9 @@ const ContactsPage: FC = () => {
           <Box display="flex" flexDirection="column" gap="12px">
             <ContactText>+7 906 500-92-26</ContactText>
             <ContactText>au_desingkost76@mail.ru</ContactText>
-            <ContactText>г.Минск, ул. Железнодорожная, д.31</ContactText>
+            <ContactText>
+              г. Москва, Пресненская наб., д. 10 стр. 2, помещ. 5
+            </ContactText>
           </Box>
         )}
       </Container>
