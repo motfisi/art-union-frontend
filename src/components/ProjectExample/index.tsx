@@ -47,7 +47,6 @@ const ProjectExample: FC<ProjectExampleProps> = (props) => {
           <TitleText
             data-aos="fade-up"
             data-aos-duration="500"
-            data-aos-delay="100"
             className="text"
           >
             {title}
@@ -55,18 +54,16 @@ const ProjectExample: FC<ProjectExampleProps> = (props) => {
           <TypeText
             data-aos="fade-up"
             data-aos-duration="500"
-            data-aos-delay="200"
             color="text.secondary"
             className="text"
           >
             {description}
           </TypeText>
         </Box>
-        <Line data-aos="fade-up" data-aos-duration="500" data-aos-delay="300" />
+        <Line data-aos="fade-up" data-aos-duration="500" />
         <Button
           data-aos="fade-up"
           data-aos-duration="500"
-          data-aos-delay="400"
           size="large"
           href={buttonPath}
         >
