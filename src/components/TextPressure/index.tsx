@@ -49,12 +49,14 @@ const TextPressure: React.FC<TextPressureProps> = ({
   const [lineHeight, setLineHeight] = useState(1.2);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const mql = window.matchMedia("(hover: none), (pointer: coarse)");
-      setIsTouchDevice(mql.matches);
-    }
-  }, []);
+  setIsTouchDevice(false);
+
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     const mql = window.matchMedia("(hover: none), (pointer: coarse)");
+  //     setIsTouchDevice(mql.matches);
+  //   }
+  // }, []);
 
   const dist = (a: { x: number; y: number }, b: { x: number; y: number }) => {
     const dx = b.x - a.x;
