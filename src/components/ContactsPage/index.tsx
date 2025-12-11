@@ -13,6 +13,7 @@ import {
   Title,
   FormContainer,
   InputsContainer,
+  AddressText,
 } from "./styles";
 
 const ContactsPage: FC = () => {
@@ -74,11 +75,12 @@ const ContactsPage: FC = () => {
       display="flex"
       alignItems="center"
       justifyContent="center"
+      pt="100px"
     >
       <Box
         width="100%"
         height="100vh"
-        minHeight={700}
+        minHeight={800}
         position="absolute"
         top={0}
         left={0}
@@ -115,11 +117,21 @@ const ContactsPage: FC = () => {
 
           {!isTablet && (
             <Box display="flex" flexDirection="column" gap="12px">
-              <ContactText>+7 906 500-92-26</ContactText>
-              <ContactText>au_desingkost76@mail.ru</ContactText>
-              <ContactText>
-                г. Москва, Пресненская наб., д. 10 стр. 2, помещ. 5
+              <ContactText href="tel:+79267769296">
+                +7 926 776-92-96
               </ContactText>
+              <ContactText href="tel:+79065009226">
+                +7 906 500-92-26
+              </ContactText>
+              <ContactText href="mailto:au_desing@mail.ru">
+                au_desing@mail.ru
+              </ContactText>
+              <ContactText href="mailto:au_desingkost76@mail.ru">
+                au_desingkost76@mail.ru
+              </ContactText>
+              <AddressText>
+                г. Москва, Пресненская наб., д. 10 стр. 2, помещ. 5
+              </AddressText>
             </Box>
           )}
         </Box>
@@ -184,11 +196,17 @@ const ContactsPage: FC = () => {
         </FormContainer>
         {isTablet && (
           <Box display="flex" flexDirection="column" gap="12px">
-            <ContactText>+7 906 500-92-26</ContactText>
-            <ContactText>au_desingkost76@mail.ru</ContactText>
-            <ContactText>
-              г. Москва, Пресненская наб., д. 10 стр. 2, помещ. 5
+            <ContactText href="tel:+79267769296">+7 926 776-92-96</ContactText>
+            <ContactText href="tel:+79065009226">+7 906 500-92-26</ContactText>
+            <ContactText href="mailto:au_desing@mail.ru">
+              au_desing@mail.ru
             </ContactText>
+            <ContactText href="mailto:au_desingkost76@mail.ru">
+              au_desingkost76@mail.ru
+            </ContactText>
+            <AddressText>
+              г. Москва, Пресненская наб., д. 10 стр. 2, помещ. 5
+            </AddressText>
           </Box>
         )}
       </Container>

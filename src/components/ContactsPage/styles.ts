@@ -52,7 +52,27 @@ export const Description = styled("h3")(({ theme }) => ({
   },
 }));
 
-export const ContactText = styled(Typography)(({ theme }) => ({
+export const ContactText = styled("a")(({ theme }) => ({
+  fontFamily: "var(--font-involve)",
+  fontWeight: 700,
+  fontSize: 24,
+  lineHeight: "32px",
+  color: theme.palette.text.primary,
+  textDecoration: "none",
+
+  [theme.breakpoints.down("md")]: {
+    fontSize: 20,
+    lineHeight: "24px",
+    textAlign: "center",
+  },
+
+  [theme.breakpoints.down("sm")]: {
+    fontSize: 16,
+    lineHeight: "20px",
+  },
+}));
+
+export const AddressText = styled(Typography)(({ theme }) => ({
   fontFamily: "var(--font-involve)",
   fontWeight: 700,
   fontSize: 24,

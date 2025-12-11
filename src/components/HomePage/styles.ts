@@ -1,8 +1,6 @@
 import { Box, styled } from "@mui/material";
 import ImageBase from "next/image";
 
-import ShinyTextBase from "@/components/ShinyText";
-
 export const Container = styled(Box)(({ theme }) => ({
   width: "100%",
   paddingTop: 200,
@@ -49,11 +47,11 @@ export const HeroContainer = styled(Box)(({ theme }) => ({
 }));
 
 export const Wrapper = styled(Box)(({ theme }) => ({
+  width: "100%",
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
   gap: 48,
-  flexGrow: 1,
 
   [theme.breakpoints.down("md")]: {
     gap: 32,
@@ -64,26 +62,13 @@ export const Wrapper = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const ShinyText = styled(ShinyTextBase)(({ theme }) => ({
-  fontFamily: "var(--font-manrope)",
-  fontWeight: 600,
-  fontSize: 40,
-  lineHeight: 1.2,
-
-  [theme.breakpoints.down("md")]: {
-    fontSize: 32,
-  },
-
-  [theme.breakpoints.down("sm")]: {
-    fontSize: 20,
-  },
-}));
-
 export const Image = styled(ImageBase)(({ theme }) => ({
   borderRadius: 20,
   objectFit: "cover",
   objectPosition: "center",
   filter: "contrast(0.9)",
+  flexShrink: 0,
+  flexGrow: 0,
 
   [theme.breakpoints.down("lg")]: {
     width: 350,

@@ -3,17 +3,12 @@ import localFont from "next/font/local";
 export const manrope = localFont({
   src: [
     {
-      path: "../../public/fonts/Manrope/Manrope-ExtraLight.ttf",
-      weight: "200",
+      path: "../../public/fonts/Manrope/Manrope-VariableFont_wght.ttf",
+      weight: "200 800",
     },
-    { path: "../../public/fonts/Manrope/Manrope-Light.ttf", weight: "300" },
-    { path: "../../public/fonts/Manrope/Manrope-Regular.ttf", weight: "400" },
-    { path: "../../public/fonts/Manrope/Manrope-Medium.ttf", weight: "500" },
-    { path: "../../public/fonts/Manrope/Manrope-SemiBold.ttf", weight: "600" },
-    { path: "../../public/fonts/Manrope/Manrope-Bold.ttf", weight: "700" },
-    { path: "../../public/fonts/Manrope/Manrope-ExtraBold.ttf", weight: "800" },
   ],
   variable: "--font-manrope",
+  display: "swap",
 });
 
 export const involve = localFont({
