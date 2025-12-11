@@ -47,9 +47,8 @@ const TextPressure: React.FC<TextPressureProps> = ({
   const [fontSize, setFontSize] = useState(minFontSize);
   const [scaleY, setScaleY] = useState(1);
   const [lineHeight, setLineHeight] = useState(1.2);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
-
-  setIsTouchDevice(false);
+  const isTouchDevice = false;
+  // const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   // useEffect(() => {
   //   if (typeof window !== "undefined") {
