@@ -1,21 +1,25 @@
 import { Box, styled } from "@mui/material";
 
-export const Container = styled(Box)(({ theme }) => ({
+export const Container = styled(Box, {
+  shouldForwardProp: (prop) => prop !== "withoutPadding",
+})<{ withoutPadding?: boolean }>(({ theme, withoutPadding }) => ({
   width: "100%",
-  padding: "0 80px",
+  padding: withoutPadding ? "0" : "0 80px",
 
   [theme.breakpoints.down("md")]: {
-    padding: "0 40px",
+    padding: withoutPadding ? "0" : "0 40px",
   },
 
   [theme.breakpoints.down("sm")]: {
-    padding: "0 20px",
+    padding: withoutPadding ? "0" : "0 20px",
   },
 }));
 
-export const MaxWidthWrapper = styled(Box)(({ theme }) => ({
+export const MaxWidthWrapper = styled(Box, {
+  shouldForwardProp: (prop) => prop !== "withoutPadding",
+})<{ withoutPadding?: boolean }>(({ theme, withoutPadding }) => ({
   width: "100%",
-  maxWidth: 1440,
+  maxWidth: withoutPadding ? "unset" : 1440,
   minHeight: "100vh",
   margin: "0 auto",
   display: "flex",
@@ -23,6 +27,6 @@ export const MaxWidthWrapper = styled(Box)(({ theme }) => ({
   justifyContent: "space-between",
 
   [theme.breakpoints.down("lg")]: {
-    maxWidth: 1280,
+    maxWidth: withoutPadding ? "unset" : 1280,
   },
 }));

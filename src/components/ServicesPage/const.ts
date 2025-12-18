@@ -8,7 +8,7 @@ export const services = [
       "Продуманная концепция",
       "Внимание к каждой детали",
     ],
-    image: "/images/label.png",
+    image: "/images/whisky.webp",
   },
   {
     title: "Логотип",
@@ -30,7 +30,7 @@ export const services = [
       "Экофокус",
       "Оптимизация под производство",
     ],
-    image: "/images/dashik.png",
+    image: "/images/beef.webp",
   },
 ];
 

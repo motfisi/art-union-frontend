@@ -29,6 +29,7 @@ const Footer: FC = () => {
       <Box width="100%" display="flex" flexDirection="column" gap={4}>
         <Box
           width="80%"
+          maxWidth={1140}
           display="flex"
           justifyContent={isMobile ? "center" : "space-between"}
           margin="0 auto"

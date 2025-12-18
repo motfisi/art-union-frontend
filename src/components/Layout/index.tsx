@@ -1,17 +1,21 @@
 "use client";
 
-import { FC, PropsWithChildren } from "react";
+import { FC } from "react";
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
+import { LayoutProps } from "./typings";
+
 import { Container, MaxWidthWrapper } from "./styles";
 
-const Layout: FC<PropsWithChildren> = ({ children }) => {
+const Layout: FC<LayoutProps> = (props) => {
+  const { children, withoutPadding } = props;
+
   return (
-    <Container>
+    <Container withoutPadding={withoutPadding}>
       <Header />
-      <MaxWidthWrapper>
+      <MaxWidthWrapper withoutPadding={withoutPadding}>
         {children}
         <Footer />
       </MaxWidthWrapper>

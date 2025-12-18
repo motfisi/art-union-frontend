@@ -1,7 +1,6 @@
 import { PropsWithChildren } from "react";
 
 import AOSInit from "@/components/AOSInit";
-import Layout from "@/components/Layout";
 import ThemeProvider from "@/lib/materialUI";
 
 import { manrope, involve, unista } from "./fonts";
@@ -24,7 +23,7 @@ const RootLayout = (props: PropsWithChildren) => {
       <body>
         <ThemeProvider>
           <AOSInit />
-          <Layout>{children}</Layout>
+          {children}
         </ThemeProvider>
       </body>
     </html>

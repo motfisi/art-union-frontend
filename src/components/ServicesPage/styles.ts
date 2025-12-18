@@ -38,7 +38,7 @@ export const ServicesTitle = styled(Typography)(({ theme }) => ({
 export const MarqueeContainer = styled(Box)(({ theme }) => ({
   width: "100dvw",
   position: "relative",
-  left: "calc(50% - 50vw)",
+  left: "calc(50% - 50dvw)",
   display: "flex",
   padding: "64px 0",
   gap: 20,
