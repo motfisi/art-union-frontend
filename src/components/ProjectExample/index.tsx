@@ -27,7 +27,7 @@ const ProjectExample: FC<ProjectExampleProps> = (props) => {
   return (
     <Container>
       <ImageWrapper ref={ref} className={`${visible ? "visible" : ""}`}>
-        <Image src={image} fill alt="product-pic" />
+        <Image src={image} fill alt="product-pic" objectFit="cover" />
       </ImageWrapper>
       <Wrapper className="wrapper">
         <Box
