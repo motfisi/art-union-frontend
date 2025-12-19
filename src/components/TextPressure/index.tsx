@@ -47,14 +47,6 @@ const TextPressure: React.FC<TextPressureProps> = ({
   const [fontSize, setFontSize] = useState(minFontSize);
   const [scaleY, setScaleY] = useState(1);
   const [lineHeight, setLineHeight] = useState(1.2);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const mql = window.matchMedia("(hover: none), (pointer: coarse)");
-      setIsTouchDevice(mql.matches);
-    }
-  }, []);
 
   const dist = (a: { x: number; y: number }, b: { x: number; y: number }) => {
     const dx = b.x - a.x;
@@ -129,23 +121,8 @@ const TextPressure: React.FC<TextPressureProps> = ({
 
   useEffect(() => {
     let rafId: number;
-    let t = 0;
 
     const animate = () => {
-      if (isTouchDevice) {
-        t += 0.02;
-        const radius = 80;
-
-        if (titleRef.current) {
-          const rect = titleRef.current.getBoundingClientRect();
-          const cx = rect.left + rect.width / 2;
-          const cy = rect.top + rect.height / 2;
-
-          cursorRef.current.x = cx + Math.cos(t) * radius;
-          cursorRef.current.y = cy + Math.sin(t) * radius;
-        }
-      }
-
       mouseRef.current.x += (cursorRef.current.x - mouseRef.current.x) / 15;
       mouseRef.current.y += (cursorRef.current.y - mouseRef.current.y) / 15;
 

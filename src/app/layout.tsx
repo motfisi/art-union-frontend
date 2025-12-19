@@ -5,13 +5,6 @@ import ThemeProvider from "@/lib/materialUI";
 
 import { manrope, involve, unista } from "./fonts";
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "ART UNION",
-  description: "art union design studio",
-};
-
 const RootLayout = (props: PropsWithChildren) => {
   const { children } = props;
 
