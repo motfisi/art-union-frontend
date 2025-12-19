@@ -23,7 +23,7 @@ export async function GET(_: Request, { params }: { params: { id: string } }) {
   return new Response(file.data as ArrayBuffer, {
     headers: {
       "Content-Type": file.headers["content-type"] ?? "image/jpeg",
-      "Cache-Control": "public, max-age=31536000, immutable",
+      "Cache-Control": "public, max-age=3600, s-maxage=3600",
     },
   });
 }
