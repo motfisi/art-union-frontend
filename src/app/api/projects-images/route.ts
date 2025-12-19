@@ -30,7 +30,9 @@ export async function GET() {
   return new Response(JSON.stringify(images), {
     headers: {
       "Content-Type": "application/json",
-      "Cache-Control": "public, max-age=60, s-maxage=60",
+      "Cache-Control": "public, max-age=3600, s-maxage=3600",
+      "CDN-Cache-Control": "public, s-maxage=3600",
+      "Vercel-CDN-Cache-Control": "public, s-maxage=3600",
     },
   });
 }

@@ -24,6 +24,8 @@ export async function GET(_: Request, { params }: { params: { id: string } }) {
     headers: {
       "Content-Type": file.headers["content-type"] ?? "image/jpeg",
       "Cache-Control": "public, max-age=3600, s-maxage=3600",
+      "CDN-Cache-Control": "public, s-maxage=3600",
+      "Vercel-CDN-Cache-Control": "public, s-maxage=3600",
     },
   });
 }
