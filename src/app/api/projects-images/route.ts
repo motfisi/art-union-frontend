@@ -27,5 +27,10 @@ export async function GET() {
         return getNum(a.name) - getNum(b.name);
       }) ?? [];
 
-  return Response.json(images);
+  return new Response(JSON.stringify(images), {
+    headers: {
+      "Content-Type": "application/json",
+      "Cache-Control": "public, max-age=60, s-maxage=60",
+    },
+  });
 }
