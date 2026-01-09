@@ -1,6 +1,6 @@
 "use client";
 
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Turn as Hamburger } from "hamburger-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -13,6 +13,7 @@ import { useDevice } from "@/hooks";
 import {
   Container,
   HamburgerWrapper,
+  HrefText,
   LogoContainer,
   MaxWidthWrapper,
 } from "./styles";
@@ -53,17 +54,29 @@ const Header: FC = () => {
       <Container>
         <MaxWidthWrapper>
           {!isTablet && (
-            <Typography
-              fontFamily="var(--font-involve)"
-              fontWeight={700}
-              fontSize={20}
-            >
-              ART UNION
-            </Typography>
+            <Box display="flex" gap={2} alignItems="center">
+              <Box
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-between"
+              >
+                <HrefText href="tel:+79267769296">+7 (926) 776-92-96</HrefText>
+                <HrefText href="tel:+79065009226">+7 (906) 500-92-26</HrefText>
+              </Box>
+              <Typography
+                fontFamily="var(--font-involve)"
+                fontWeight={700}
+                fontSize={20}
+              >
+                ART UNION
+              </Typography>
+            </Box>
           )}
+
           <LogoContainer href={ROUTES.HOMEPAGE}>
             <Image src="/images/logo.png" fill alt="logo" />
           </LogoContainer>
+
           <HamburgerWrapper id="hamburger">
             <Hamburger
               size={35}

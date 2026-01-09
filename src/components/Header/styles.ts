@@ -30,9 +30,20 @@ export const MaxWidthWrapper = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
+  position: "relative",
 
   [theme.breakpoints.down("lg")]: {
     maxWidth: 1280,
+  },
+}));
+
+export const HrefText = styled(Link)(({ theme }) => ({
+  color: theme.palette.text.secondary,
+  textDecoration: "none",
+  transition: "color 0.25s ease",
+
+  "&:hover": {
+    color: theme.palette.text.primary,
   },
 }));
 
@@ -40,6 +51,11 @@ export const LogoContainer = styled(Link)(({ theme }) => ({
   position: "relative",
   width: 102,
   height: 75,
+
+  [theme.breakpoints.up("md")]: {
+    position: "absolute",
+    left: "50%",
+  },
 
   [theme.breakpoints.down("md")]: {
     width: 81,
